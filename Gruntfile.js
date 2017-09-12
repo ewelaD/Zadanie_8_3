@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+  	jshint: {
+      all: ['js/*.js']
+  },
     sass: {
         options: {
             sourceMap: true
@@ -32,9 +35,6 @@ module.exports = function(grunt) {
         },
     }
   },
-  jshint: {
-      all: ['js/*.js']
-  }
 });
 
   // Load the plugins tasks
@@ -43,5 +43,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'imagemin', 'watch', 'jshint']);
+  grunt.registerTask('default', ['jshint', 'sass', 'imagemin', 'watch']);
 };
